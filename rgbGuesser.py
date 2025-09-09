@@ -92,7 +92,7 @@ def ECFP():
     rows_out = []
 
     check_order = [("B_ref", idx_B), ("G_ref", idx_G), ("R_ref", idx_R)]
-    for name, idx in check_order:
+    for name, idx in check_order:#this part is powered by GPT5
         m, s = means[idx], stds[idx]
         disp = toDispLinear(m)
         rel  = disp / whiteVec
@@ -132,7 +132,7 @@ def ECFP():
     print("\nlabels = ['5','4','3','2','1']")
     print("RGB =", rgb_list)
 
-    if OUT_PREVIEW:
+    if OUT_PREVIEW:#this part is powered by GPT5
         draw = ImageDraw.Draw(gImg)
         for (r,c),bbox in boxes.items():
             x0,y0,x1,y1 = bbox
@@ -149,3 +149,4 @@ def ECFP():
 
 if __name__ == "__main__":
     ECFP()
+
