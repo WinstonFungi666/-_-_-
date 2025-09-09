@@ -13,7 +13,7 @@ import argparse
 import numpy as np
 import pandas as pd
 
-def loadCmf(cmf_csv):
+def loadCmf(cmf_csv):#this part is powered by GPT5
     df = pd.read_csv(cmf_csv)
     cols = [c.strip().lower() for c in df.columns]
     df.columns = cols
@@ -23,7 +23,7 @@ def loadCmf(cmf_csv):
             raise ValueError(f"CMF CSV missing column: {n}")
     return df[["wavelength_nm", "x_bar", "y_bar", "z_bar"]].astype(float)
 
-def loadSpdFromCsv(csv_path):
+def loadSpdFromCsv(csv_path):#this part is powered by GPT5
     df = pd.read_csv(csv_path, encoding="cp950")
     cols = [c.strip().lower() for c in df.columns]
     df.columns = cols
@@ -67,7 +67,7 @@ def xyFromXyz(X, Y, Z, eps=1e-12):
 
 #--------------------------------------------------------------------------------------------------------------#
 def main():
-    ap = argparse.ArgumentParser()
+    ap = argparse.ArgumentParser()#this part is powered by GPT5
     ap.add_argument("--spd_csv", default=DEFAULT_SPD_CSV, help="Spectrum CSV (two columns or with headers)")
     ap.add_argument("--cmf_csv", default=DEFAULT_CMF_CSV, help="CIE 1931 2° CMF CSV (wavelength_nm,x_bar,y_bar,z_bar)")
     ap.add_argument("--start", type=float, default=DEFAULT_START, help="Start wavelength (nm)")
